@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 08:26:07 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/16 08:35:38 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ int			is_sorted(t_stack *s);
 
 /* Utils */
 
-//void		free_stack(t_stack **s);
-//long		ft_atolong(const char *str);
-//int			nb_abs(int nb);
+void		free_stack(t_stack **s);
+long		ft_atolong(const char *str);
+int			nb_abs(int nb);
 
 /* Error */
 
-//void		exit_error(t_stack **a, t_stack **b);
+void		exit_error(t_stack **a, t_stack **b);
 
 /* Input Check */
 
