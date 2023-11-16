@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:01:20 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 08:35:26 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/16 08:39:11 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* free_stack:
 *	Frees each element in a given stack and sets the stack pointer to NULL.
 */
-void	free_stacks(t_stack **s)
+void	free_stack(t_stack **s)
 {
 	t_stack	*tmp;
 	

@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 08:35:38 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/16 08:45:48 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libft/inc/ft_printf.h"
 # include "../libft/inc/libft.h"
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -29,8 +30,8 @@ typedef struct s_stack
 
 /* Initialization */
 
-//t_stack		*fill_stack_values(int ac, char **av);
-//void		assign_index(t_stack *a, int ac);
+t_stack		*fill_stack_values(int ac, char **av);
+void		assign_index(t_stack *a, int ac);
 
 /* Sorting algo */
 
