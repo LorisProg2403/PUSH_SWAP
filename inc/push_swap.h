@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 02:06:58 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/16 02:17:34 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_stack
 
 /* Sorting algo */
 
-//int			is_sorted(t_stack *s);	
+int			is_sorted(t_stack *s);	
 //void		tiny_sort(t_stack **s);
 //void		sort(t_stack **a, t_stack **b);
 
