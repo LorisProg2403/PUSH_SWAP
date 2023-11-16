@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 02:17:34 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/16 08:20:56 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int			is_sorted(t_stack *s);
 
 /* Input Check */
 
-//int			is_correct_input(char **av);
+int			is_correct_input(char **av);
 //int			is_sign(char c);
 //int			nbstr_cmp(const char *s1, const char *s2);
 
