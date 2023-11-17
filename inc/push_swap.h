@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 08:45:48 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/17 05:55:52 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,17 @@ int			is_sorted(t_stack *s);
 
 /* Operations */
 
-//void		pa(t_stack **a, t_stack **b);
-//void		pb(t_stack **a, t_stack **b);
-//void		sa(t_stack **a);
-//void		sb(t_stack **b);
-//void		ss(t_stack **a, t_stack **b);
-//void		ra(t_stack **a);
-//void		rb(t_stack **b);
-//void		rr(t_stack **a, t_stack **b);
-//void		rra(t_stack **a);
-//void		rrb(t_stack **b);
-//void		rrr(t_stack **a, t_stack **b);
+void		pa(t_stack **a, t_stack **b);
+void		pb(t_stack **a, t_stack **b);
+void		sa(t_stack **a);
+void		sb(t_stack **b);
+void		ss(t_stack **a, t_stack **b);
+void		ra(t_stack **a);
+void		rb(t_stack **b);
+void		rr(t_stack **a, t_stack **b);
+void		rra(t_stack **a);
+void		rrb(t_stack **b);
+void		rrr(t_stack **a, t_stack **b);
 
 /* Stacks Functions */
 
