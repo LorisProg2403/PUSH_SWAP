@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:37:48 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 02:17:16 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/17 05:59:13 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,22 @@ static void	push_swap(t_stack **a, t_stack **b, int size)
 */
 int	main(int ac, char **av)
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		s_size;
-	
-	if (ac < 2)
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	int		stack_size;
+
+	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
+	else if (ac == 2)
+		av = split(av[1], ' ');
 	if (!is_correct_input(av))
 		exit_error(NULL, NULL);
-	b = NULL;
-	a = fill_stack_values(ac, av);
-	s_size = get_stack_size(a);
-	assing_index(a, s_size + 1);
-	push_swap(&a, &b, s_size);
-	free(&a);
-	free(&b);
+	stack_b = NULL;
+	stack_a = fill_stack_values(av);
+	stack_size = get_stack_size(stack_a);
+	assign_index(stack_a, stack_size + 1);
+	push_swap(&stack_a, &stack_b, stack_size);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

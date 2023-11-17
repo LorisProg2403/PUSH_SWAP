@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:47:03 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 08:45:38 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/17 06:01:26 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 *	Fills stack_a with the provided values.
 *	If the values are out of integer range, prints and error and exits the program.
 */
-t_stack	*fill_stack_values(int ac, char **av)
+t_stack	*fill_stack_values(char **av)
 {
 	t_stack	*a;
 	long	nb;
@@ -25,7 +25,7 @@ t_stack	*fill_stack_values(int ac, char **av)
 	a = NULL;
 	nb = 0;
 	i = 1;
-	while (i < ac)
+	while (av[i])
 	{
 		nb = ft_atolong(av[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
@@ -47,7 +47,7 @@ t_stack	*fill_stack_values(int ac, char **av)
 *		indexes:		[1]	[2]	[4]	[3]
 *	The indexes are assigned from highest (stack_size) to lowest (1).
 */
-void	assing_index(t_stack *a, int size)
+void	assign_index(t_stack *a, int size)
 {
 	t_stack	*ptr;
 	t_stack	*highest;
