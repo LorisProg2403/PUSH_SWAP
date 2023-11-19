@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:40:09 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 08:48:24 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 //# include "../libft/inc/libft.h"
 # include <limits.h>
 # include <stdbool.h>
+# include <stddef.h>
 
 typedef struct s_stack
 {
@@ -81,6 +82,7 @@ int			get_stack_size(t_stack *s);
 void		free_stack(t_stack **s);
 long		ft_atolong(const char *str);
 int			nb_abs(int nb);
+int			ft_isdigit(int c);
 
 /* Error */
 

@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 08:24:40 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/19 08:38:17 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/19 08:48:39 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SORT_DIR		=	$(SRC_PATH)Sorting_algo/sort_tiny.c \
 					$(SRC_PATH)Sorting_algo/sort.c
 
 UTILS_DIR		=	$(SRC_PATH)utils/split.c \
+					$(SRC_PATH)utils/ft_isdigit.c \
 					$(SRC_PATH)utils/utils.c
 
 MAIN_DIR		=	$(SRC_PATH)main.c
@@ -52,10 +53,8 @@ INCS			=	-I ./inc/
 all:	$(OBJ_PATH) $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
+				@mkdir -p $(@D)
 				$(CC) $(FLAGS) -c $< -o $@ $(INCS)
-
-$(OBJ_PATH):
-				mkdir $(OBJ_PATH)
 
 $(NAME): 		$(OBJS)
 				$(CC) $(FLAGS) $(OBJS) -o $(NAME)
