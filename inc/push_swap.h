@@ -6,15 +6,14 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:48:24 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 08:49:24 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-//# include "../libft/inc/ft_printf.h"
-//# include "../libft/inc/libft.h"
+# include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
 # include <stddef.h>
