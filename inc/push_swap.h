@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 07:47:29 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 07:57:17 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void		get_target_position(t_stack **a, t_stack **b);
 
 /* Cost */
 
-//void		get_cost(t_stack **a, t_stack **b);
-//void		do_cheapest_move(t_stack **a, t_stack **b);
+void		get_cost(t_stack **a, t_stack **b);
+void		do_cheapest_move(t_stack **a, t_stack **b);
 
 /* Move */
 
