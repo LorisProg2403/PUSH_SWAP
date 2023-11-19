@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:07:49 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 08:16:35 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ void		rrr(t_stack **a, t_stack **b);
 
 /* Stacks Functions */
 
-//t_stack		*get_stack_bottom(t_stack *s);
-//t_stack		*get_stack_before_bottom(t_stack *s);
-//t_stack		*stack_new(int value);
-//void		stack_add_bottom(t_stack **s, t_stack *new);
-//int			get_stack_size(t_stack *s);
+t_stack		*get_stack_bottom(t_stack *s);
+t_stack		*get_stack_before_bottom(t_stack *s);
+t_stack		*stack_new(int value);
+void		stack_add_bottom(t_stack **s, t_stack *new);
+int			get_stack_size(t_stack *s);
 
 /* Utils */
 
