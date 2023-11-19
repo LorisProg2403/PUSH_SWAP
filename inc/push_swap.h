@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 07:31:07 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 07:47:29 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void		tiny_sort(t_stack **s);
 
 /* Position */
 
-//int			get_lowest_index_position(t_stack **s);
-//void		get_target_position(t_stack **a, t_stack **b);
+int			get_lowest_index_position(t_stack **s);
+void		get_target_position(t_stack **a, t_stack **b);
 
 /* Cost */
 
