@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/17 06:00:55 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 07:31:07 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void		assign_index(t_stack *a, int ac);
 
 /* Sorting algo */
 
-int			is_sorted(t_stack *s);	
-//void		tiny_sort(t_stack **s);
+int			is_sorted(t_stack *s);
+void		tiny_sort(t_stack **s);
 //void		sort(t_stack **a, t_stack **b);
 
 /* Position */
