@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:16:35 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 08:23:51 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		assign_index(t_stack *a, int ac);
 
 int			is_sorted(t_stack *s);
 void		tiny_sort(t_stack **s);
-//void		sort(t_stack **a, t_stack **b);
+void		sort(t_stack **a, t_stack **b);
 
 /* Position */
 
