@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:52:30 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 08:56:31 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ long		ft_atolong(const char *str);
 int			nb_abs(int nb);
 int			ft_isdigit(int c);
 void		ft_putstr(char *s);
+void		ft_putstr_fd(char *s, int fd);
+char		**split(char *s, char c);
 
 /* Error */
 

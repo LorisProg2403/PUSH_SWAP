@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:01:20 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 08:39:11 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 08:55:57 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 void	free_stack(t_stack **s)
 {
 	t_stack	*tmp;
-	
+
 	if (!s || !(*s))
 		return ;
 	while (*s)
@@ -37,9 +37,9 @@ void	free_stack(t_stack **s)
 void	exit_error(t_stack **a, t_stack **b)
 {
 	if (!a || *a)
-		free_stacks(a);
+		free_stack(a);
 	if (!b || *b)
-		free_stacks(b);
+		free_stack(b);
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
