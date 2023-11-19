@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:52:09 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 07:46:55 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/19 08:50:28 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ void	get_target_position(t_stack **a, t_stack **b)
 	int		target_pos;
 
 	tmp_b = *b;
-	get_postion(a);
+	get_position(a);
 	get_position(b);
 	target_pos = 0;
 	while (tmp_b)

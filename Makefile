@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 08:24:40 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/19 08:48:39 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/19 08:52:41 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SORT_DIR		=	$(SRC_PATH)Sorting_algo/sort_tiny.c \
 
 UTILS_DIR		=	$(SRC_PATH)utils/split.c \
 					$(SRC_PATH)utils/ft_isdigit.c \
+					$(SRC_PATH)utils/ft_putstr.c \
 					$(SRC_PATH)utils/utils.c
 
 MAIN_DIR		=	$(SRC_PATH)main.c
