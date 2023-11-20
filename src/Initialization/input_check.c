@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:05:18 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/16 08:20:26 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/20 12:44:53 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	have_duplicates(char **av)
 		j = 1;
 		while (av[j])
 		{
-			if (j != i && !nbstr_cmp(av[i], av[j]))
+			if (j != i && nbstr_cmp(av[i], av[j]) == 0)
 				return (1);
 			j++;
 		}

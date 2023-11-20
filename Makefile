@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
+#    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 08:24:40 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/19 08:52:41 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/20 12:38:34 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ INCS			=	-I ./inc/
 
 # Rules
 
-all:	$(OBJ_PATH) $(NAME)
+all:			$(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 				@mkdir -p $(@D)
@@ -61,7 +61,7 @@ $(NAME): 		$(OBJS)
 				$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-				rm -rf $(OBJ_PATH)
+				rm -r $(OBJ_PATH)
 
 fclean:			clean
 				rm -f $(NAME)

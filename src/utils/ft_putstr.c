@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 08:50:56 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:55:36 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/20 12:41:42 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static void	ft_putchar_fd(char c, int fd)
+static int	ft_strlen(char *s)
 {
-	write (fd, &c, 1);
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
 void	ft_putstr(char *s)
@@ -24,6 +29,5 @@ void	ft_putstr(char *s)
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (s--)
-		ft_putchar_fd(*s, fd);
+	write(fd, s, ft_strlen(s));
 }
