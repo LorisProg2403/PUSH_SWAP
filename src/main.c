@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:37:48 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 13:04:34 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/20 15:13:26 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,11 @@ int	is_sorted(t_stack *s)
 *	Chooses a sorting method depending on the number
 *	of values to be sorted.
 */
-#include <stdio.h>
-
 static void	push_swap(t_stack **a, t_stack **b, int size)
 {
 	if (size == 2 && !is_sorted(*a))
 		sa(a);
-	else if (size == 3)
+	else if (size == 3 && !is_sorted(*a))
 		tiny_sort(a);
 	else if (size > 3 && !is_sorted(*a))
 		sort(a, b);

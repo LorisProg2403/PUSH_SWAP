@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:50:14 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:23:48 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/20 13:35:46 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	push_all_save_three(t_stack **a, t_stack **b)
 	size = get_stack_size(*a);
 	pushed = 0;
 	i = 0;
-	while (size > 0 && i < size && pushed < size / 2)
+	while (size > 6 && i < size && pushed < size / 2)
 	{
 		if ((*a)->index <= size / 2)
 		{
@@ -37,8 +37,11 @@ static void	push_all_save_three(t_stack **a, t_stack **b)
 			ra(a);
 		i++;
 	}
-	while (size - pushed++ > 3)
+	while (size - pushed > 3)
+	{
 		pb(a, b);
+		pushed++;
+	}
 }
 
 /* shift_stack:
@@ -56,13 +59,19 @@ static void	shift_stack(t_stack **s)
 	lowest_pos = get_lowest_index_position(s);
 	if (lowest_pos > size / 2)
 	{
-		while (lowest_pos++ < size)
+		while (lowest_pos < size)
+		{
 			rra(s);
+			lowest_pos++;
+		}
 	}
 	else
 	{
-		while (lowest_pos-- > 0)
+		while (lowest_pos > 0)
+		{
 			ra(s);
+			lowest_pos--;
+		}
 	}
 }
 

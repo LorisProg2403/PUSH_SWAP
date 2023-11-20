@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:47:03 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 13:03:07 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/20 15:34:08 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_stack	*fill_stack_values(char **av)
 *		indexes:		[1]	[2]	[4]	[3]
 *	The indexes are assigned from highest (stack_size) to lowest (1).
 */
+#include <stdio.h>
 void	assign_index(t_stack *a, int size)
 {
 	t_stack	*ptr;
