@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:59:23 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:16:20 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/20 13:03:34 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*stack_new(int value)
 {
 	t_stack	*new;
 
-	new = malloc(sizeof(t_stack));
+	new = malloc(sizeof * new);
 	if (!new)
 		return (NULL);
 	new->value = value;
@@ -40,7 +40,7 @@ t_stack	*stack_new(int value)
 	new->cost_a = -1;
 	new->cost_b = -1;
 	new->next = NULL;
-	return (NULL);
+	return (new);
 }
 
 void	stack_add_bottom(t_stack **s, t_stack *new)
