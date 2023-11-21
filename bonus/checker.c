@@ -6,36 +6,47 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:28:28 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 17:32:40 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 17:48:50 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap_bonus.h"
+#include "../inc/push_swap.h"
+
+int	is_sorted(t_stack *s)
+{
+	while (s->next)
+	{
+		if (s->value > s->next->value)
+			return (0);
+		s = s->next;
+	}
+	return (1);
+}
 
 static int	do_commands(char *commands, t_stack **a, t_stack **b)
 {
 	if (!ft_strcmp(commands, "pa\n"))
-		pa_bo(a, b);
+		pa(a, b, false);
 	else if (!ft_strcmp(commands, "pb\n"))
-		pb_bo(a, b);
+		pb(a, b, false);
 	else if (!ft_strcmp(commands, "sa\n"))
-		sa_bo(a);
+		sa(a, false);
 	else if (!ft_strcmp(commands, "sb\n"))
-		sb_bo(b);
+		sb(b, false);
 	else if (!ft_strcmp(commands, "ss\n"))
-		ss_bo(a, b);
+		ss(a, b, false);
 	else if (!ft_strcmp(commands, "ra\n"))
-		ra_bo(a);
+		ra(a, false);
 	else if (!ft_strcmp(commands, "rb\n"))
-		rb_bo(b);
+		rb(b, false);
 	else if (!ft_strcmp(commands, "rr\n"))
-		rr_bo(a, b);
+		rr(a, b, false);
 	else if (!ft_strcmp(commands, "rra\n"))
-		rra_bo(a);
+		rra(a, false);
 	else if (!ft_strcmp(commands, "rrb\n"))
-		rrb_bo(b);
+		rrb(b, false);
 	else if (!ft_strcmp(commands, "rrr\n"))
-		rrr_bo(a, b);
+		rrr(a, b, false);
 	else
 		return (1);
 	return (0);
@@ -88,21 +99,21 @@ int	main(int ac, char **av)
 		return (1);
 	else if (ac == 2)
 	{
-		av = splitbonus(av[1], ' ');
+		av = split(av[1], ' ');
 		used_split = 1;
 	}
-	if (!is_correct_inputs(av))
-		exit_errors(NULL, NULL);
+	if (!is_correct_input(av))
+		exit_error(NULL, NULL);
 	b = NULL;
-	a = fill_stack(av);
+	a = fill_stack_values(av);
 	if (used_split)
 		ft_free_ptrstr(av);
 	get_commands(&a, &b);
-	if (issorted(a))
+	if (is_sorted(a))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-	free_stacks(&a);
-	free_stacks(&b);
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }

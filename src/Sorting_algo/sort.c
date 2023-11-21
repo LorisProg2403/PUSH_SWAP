@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:50:14 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 13:35:46 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 17:50:43 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ static void	push_all_save_three(t_stack **a, t_stack **b)
 	{
 		if ((*a)->index <= size / 2)
 		{
-			pb(a, b);
+			pb(a, b, true);
 			pushed++;
 		}
 		else
-			ra(a);
+			ra(a, true);
 		i++;
 	}
 	while (size - pushed > 3)
 	{
-		pb(a, b);
+		pb(a, b, true);
 		pushed++;
 	}
 }
@@ -61,7 +61,7 @@ static void	shift_stack(t_stack **s)
 	{
 		while (lowest_pos < size)
 		{
-			rra(s);
+			rra(s, true);
 			lowest_pos++;
 		}
 	}
@@ -69,7 +69,7 @@ static void	shift_stack(t_stack **s)
 	{
 		while (lowest_pos > 0)
 		{
-			ra(s);
+			ra(s, true);
 			lowest_pos--;
 		}
 	}

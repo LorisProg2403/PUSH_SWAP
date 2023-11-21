@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:37:48 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 15:41:28 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 17:49:09 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	is_sorted(t_stack *s)
 static void	push_swap(t_stack **a, t_stack **b, int size)
 {
 	if (size == 2 && !is_sorted(*a))
-		sa(a);
+		sa(a, true);
 	else if (size == 3 && !is_sorted(*a))
 		tiny_sort(a);
 	else if (size > 3 && !is_sorted(*a))

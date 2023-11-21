@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:58:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 15:00:37 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 17:47:44 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,24 @@ static void	swap(t_stack *s)
 	s->next->index = tmp;
 }
 
-void	sa(t_stack **a)
+void	sa(t_stack **a, bool print)
 {
 	swap(*a);
-	ft_printf("sa\n");
+	if (print)
+		ft_printf("sa\n");
 }
 
-void	sb(t_stack **b)
+void	sb(t_stack **b, bool print)
 {
 	swap(*b);
-	ft_printf("sb\n");
+	if (print)
+		ft_printf("sb\n");
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b, bool print)
 {
 	swap(*a);
 	swap(*b);
-	ft_printf("ss\n");
+	if (print)
+		ft_printf("ss\n");
 }

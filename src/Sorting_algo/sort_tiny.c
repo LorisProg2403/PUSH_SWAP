@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:49:50 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 13:44:13 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 17:50:23 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	tiny_sort(t_stack **s)
 		return ;
 	highest = find_highest_index(*s);
 	if ((*s)->index == highest)
-		ra(s);
+		ra(s, true);
 	else if ((*s)->next->index == highest)
-		rra(s);
+		rra(s, true);
 	if ((*s)->index > (*s)->next->index)
-		sa(s);
+		sa(s, true);
 }

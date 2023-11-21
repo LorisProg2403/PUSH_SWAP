@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_move.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:54:09 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 06:34:23 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 17:50:07 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	do_rev_rotate_both(t_stack **a, t_stack **b,
 	{
 		(*cost_a)++;
 		(*cost_b)++;
-		rrr(a, b);
+		rrr(a, b, true);
 	}
 }
 
@@ -36,7 +36,7 @@ static void	do_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 	{
 		(*cost_a)--;
 		(*cost_b)--;
-		rr(a, b);
+		rr(a, b, true);
 	}
 }
 
@@ -52,17 +52,17 @@ static void	do_rotate(t_stack **s, int *cost, char c)
 		if (*cost > 0)
 		{
 			if (c == 'a')
-				ra(s);
+				ra(s, true);
 			if (c == 'b')
-				rb(s);
+				rb(s, true);
 			(*cost)--;
 		}
 		else if (*cost < 0)
 		{
 			if (c == 'a')
-				rra(s);
+				rra(s, true);
 			if (c == 'b')
-				rrb(s);
+				rrb(s, true);
 			(*cost)++;
 		}
 	}
@@ -84,5 +84,5 @@ void	do_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
 		do_rotate_both(a, b, &cost_a, &cost_b);
 	do_rotate(a, &cost_a, 'a');
 	do_rotate(b, &cost_b, 'b');
-	pa(a, b);
+	pa(a, b, true);
 }

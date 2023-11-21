@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 08:24:40 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 17:23:46 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 17:54:29 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,16 +50,16 @@ UTILS_DIR		=	$(SRC_PATH)utils/split.c \
 MAIN_DIR		=	$(SRC_PATH)main.c
 
 BONUS_DIR		=	$(BONUS_PATH)checker.c \
-					$(BONUS_PATH)checks_utils.c \
-					$(BONUS_PATH)fill_stack.c \
-					$(BONUS_PATH)input_checks.c \
-					$(BONUS_PATH)is_sorted.c \
-					$(BONUS_PATH)pushbonus.c \
-					$(BONUS_PATH)reverse_rotatebonus.c \
-					$(BONUS_PATH)rotatebonus.c \
-					$(BONUS_PATH)splitbonus.c \
-					$(BONUS_PATH)swapbonus.c 
-
+					$(SRC_PATH)initialization/initialization.c \
+					$(SRC_PATH)initialization/input_check.c \
+					$(SRC_PATH)initialization/input_check_utils.c \
+					$(SRC_PATH)initialization/stacks.c \
+					$(SRC_PATH)Operations/push.c \
+					$(SRC_PATH)Operations/reverse_rotate.c \
+					$(SRC_PATH)Operations/rotate.c \
+					$(SRC_PATH)Operations/swap.c \
+					$(SRC_PATH)Utils/split.c \
+					$(SRC_PATH)Utils/utils.c
 
 SRCS			=	$(COST_DIR) $(INI_DIR) $(MOVE_DIR) $(OPERATIONS_DIR) $(SORT_DIR) $(UTILS_DIR) $(MAIN_DIR)
 OBJS 			= 	$(patsubst $(SRC_PATH)%.c,$(OBJ_PATH)%.o,$(SRCS))
@@ -70,6 +70,8 @@ OBJS_BONUS		= 	$(patsubst $(BONUS_PATH)%.c,$(BONUS_OBJ_PATH)%.o,$(SRCS_BONUS))
 # Rules
 
 all :						$(NAME)
+
+both :						$(NAME) bonus
 
 $(NAME): 					$(OBJS) $(LIBFT)
 							@$(CC) $(FLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
@@ -98,7 +100,7 @@ fclean: 					clean
 							@$(RM) $(BONUS)
 							@make fclean -C ./libft
 					
-re: 						fclean all bonus
+re: 						fclean bonus
 
-.PHONY: 					all clean fclean re bonus
+.PHONY: 					all clean fclean re bonus both
 	
