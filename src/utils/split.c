@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 05:59:51 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:41:13 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 07:02:50 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char	*get_next_word(char *s, char c)
 		++cursor;
 	while ((s[cursor + len] != c) && s[cursor + len])
 		++len;
-	next_word = malloc(len * sizeof(char) + 1);
+	next_word = malloc((size_t)(len + 1) * sizeof(char));
 	if (!next_word)
 		return (NULL);
 	while ((s[cursor] != c) && s[cursor])
@@ -68,7 +68,7 @@ char	**split(char *s, char c)
 	words_count = count_words(s, c);
 	if (!words_count)
 		exit(1);
-	output = malloc(sizeof(char *) * (words_count + 2));
+	output = malloc(sizeof(char *) * (size_t)(words_count + 2));
 	if (!output)
 		return (NULL);
 	while (words_count-- >= 0)

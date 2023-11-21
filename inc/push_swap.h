@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 15:08:14 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 07:24:59 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int			get_stack_size(t_stack *s);
 /* Utils */
 
 void		free_stack(t_stack **s);
+void		free_av(char **av);
 long		ft_atolong(const char *str);
 int			nb_abs(int nb);
 int			ft_isdigit(int c);

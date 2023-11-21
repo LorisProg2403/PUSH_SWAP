@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:37:48 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 15:13:26 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 07:24:32 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,16 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;
+	int		used_split;
 
+	used_split = 0;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
 	else if (ac == 2)
+	{
 		av = split(av[1], ' ');
+		used_split = 1;
+	}
 	if (!is_correct_input(av))
 		exit_error(NULL, NULL);
 	stack_b = NULL;
@@ -63,6 +68,8 @@ int	main(int ac, char **av)
 	stack_size = get_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
+	if (used_split)
+		free_av(av);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

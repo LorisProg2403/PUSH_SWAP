@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:01:20 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 15:36:50 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 07:05:04 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
+
+void	free_av(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
+}
 
 /* free_stack:
 *	Frees each element in a given stack and sets the stack pointer to NULL.

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialization.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:47:03 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 15:34:08 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 06:45:47 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,12 @@ t_stack	*fill_stack_values(char **av)
 *		indexes:		[1]	[2]	[4]	[3]
 *	The indexes are assigned from highest (stack_size) to lowest (1).
 */
-#include <stdio.h>
 void	assign_index(t_stack *a, int size)
 {
 	t_stack	*ptr;
 	t_stack	*highest;
 	int		value;
-	
+
 	while (--size > 0)
 	{
 		ptr = a;
@@ -72,7 +71,7 @@ void	assign_index(t_stack *a, int size)
 			else
 				ptr = ptr->next;
 		}
-		if (highest)
+		if (highest != NULL)
 			highest->index = size;
 	}
 }

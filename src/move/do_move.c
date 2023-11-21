@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_move.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:54:09 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 12:54:18 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 06:34:23 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 static void	do_rev_rotate_both(t_stack **a, t_stack **b,
 												int *cost_a, int *cost_b)
 {
-	while ((*cost_a)++ < 0 && (*cost_b)++ < 0)
+	while (*cost_a < 0 && *cost_b < 0)
+	{
+		(*cost_a)++;
+		(*cost_b)++;
 		rrr(a, b);
+	}
 }
 
 /* do_rotate_both:
@@ -28,8 +32,12 @@ static void	do_rev_rotate_both(t_stack **a, t_stack **b,
 */
 static void	do_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
-	while ((*cost_a)-- > 0 && (*cost_b)-- > 0)
+	while (*cost_a > 0 && *cost_b > 0)
+	{
+		(*cost_a)--;
+		(*cost_b)--;
 		rr(a, b);
+	}
 }
 
 /* do_rotate:
