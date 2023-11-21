@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:37:48 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 07:24:32 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:41:28 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	main(int ac, char **av)
 	assign_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
 	if (used_split)
-		free_av(av);
+		ft_free_ptrstr(av);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

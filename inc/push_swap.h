@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 15:09:33 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:41:43 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ int			get_stack_size(t_stack *s);
 /* Utils */
 
 void		free_stack(t_stack **s);
-void		free_av(char **av);
 long		ft_atolong(const char *str);
 int			nb_abs(int nb);
 char		**split(char *s, char c);
