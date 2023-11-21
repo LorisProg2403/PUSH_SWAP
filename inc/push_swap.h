@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 07:24:59 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:09:33 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
-# include <limits.h>
 # include <stdbool.h>
 # include <stddef.h>
-# include <unistd.h>
+# include "../libft/include/libft.h"
 
 typedef struct s_stack
 {
@@ -83,9 +81,6 @@ void		free_stack(t_stack **s);
 void		free_av(char **av);
 long		ft_atolong(const char *str);
 int			nb_abs(int nb);
-int			ft_isdigit(int c);
-void		ft_putstr(char *s);
-void		ft_putstr_fd(char *s, int fd);
 char		**split(char *s, char c);
 
 /* Error */
@@ -95,7 +90,6 @@ void		exit_error(t_stack **a, t_stack **b);
 /* Input Check */
 
 int			is_correct_input(char **av);
-int			is_sign(char c);
 int			nbstr_cmp(const char *s1, const char *s2);
 
 #endif //PUSH_SWAP_H

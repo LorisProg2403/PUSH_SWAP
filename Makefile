@@ -6,16 +6,21 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 08:24:40 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/20 12:38:34 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 15:09:29 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-cc 		= gcc
-flags	= -Wall -Werror -Wextra
-NAME	= push_swap
+NAME	=	push_swap
 
-SRC_PATH	= src/
-OBJ_PATH	= obj/
+cc 		=	gcc
+CFLAGS	=	-Wall -Werror -Wextra -I $(INC)
+RM		=	rm -f
+
+
+SRC_PATH	= 	src/
+OBJ_PATH	= 	obj/
+LIBFT		=	libft/libft.a
+INC			=	inc/
 
 # Source files
 COST_DIR		=	$(SRC_PATH)cost/cost.c
@@ -37,8 +42,6 @@ SORT_DIR		=	$(SRC_PATH)Sorting_algo/sort_tiny.c \
 					$(SRC_PATH)Sorting_algo/sort.c
 
 UTILS_DIR		=	$(SRC_PATH)utils/split.c \
-					$(SRC_PATH)utils/ft_isdigit.c \
-					$(SRC_PATH)utils/ft_putstr.c \
 					$(SRC_PATH)utils/utils.c
 
 MAIN_DIR		=	$(SRC_PATH)main.c
@@ -47,25 +50,29 @@ MAIN_DIR		=	$(SRC_PATH)main.c
 SRCS			=	$(COST_DIR) $(INI_DIR) $(MOVE_DIR) $(OPERATIONS_DIR) $(SORT_DIR) $(UTILS_DIR) $(MAIN_DIR)
 
 OBJS 			= 	$(patsubst $(SRC_PATH)%.c,$(OBJ_PATH)%.o,$(SRCS))
-INCS			=	-I ./inc/
 
 # Rules
 
-all:			$(NAME)
+all :				$(NAME)
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-				@mkdir -p $(@D)
-				$(CC) $(FLAGS) -c $< -o $@ $(INCS)
+$(NAME): 			$(OBJS) $(LIBFT)
+					@$(CC) $(FLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-$(NAME): 		$(OBJS)
-				$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+$(LIBFT):
+					@make -C ./libft
+
+$(OBJ_PATH)%.o:		$(SRC_PATH)%.c 
+					@mkdir -p $(@D)
+					@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-				rm -r $(OBJ_PATH)
+					@$(RM) -r $(OBJ_PATH)
+					@make clean -C ./libft
 
-fclean:			clean
-				rm -f $(NAME)
+fclean: 			clean
+					@$(RM) $(NAME)
+					@make fclean -C ./libft
+					
+re: 				fclean all
 
-re:				fclean all
-
-.PHONY:			all clean fclean re
+.PHONY: 			all clean fclean re

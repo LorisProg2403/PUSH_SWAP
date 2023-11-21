@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:58:26 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 12:52:14 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:01:47 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ static void	push(t_stack **dst, t_stack **src)
 void	pa(t_stack **a, t_stack **b)
 {
 	push(a, b);
-	ft_putstr("pa\n");
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	push(b, a);
-	ft_putstr("pb\n");
+	ft_printf("pb\n");
 }

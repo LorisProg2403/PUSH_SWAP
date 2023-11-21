@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:58:39 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/17 05:59:33 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:00:18 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ static void	rotate(t_stack **s)
 void	ra(t_stack **a)
 {
 	rotate(a);
-	ft_putstr("ra\n");
+	ft_printf("ra\n");
 }
 
 void	rb(t_stack **b)
 {
 	rotate(b);
-	ft_putstr("rb\n");
+	ft_printf("rb\n");
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
-	ft_putstr("rr\n");
+	ft_printf("rr\n");
 }

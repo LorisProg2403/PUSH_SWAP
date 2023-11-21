@@ -6,11 +6,11 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:51:03 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 13:35:34 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:03:25 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
 /* get_cost:
 *	Calculates the cost of moving each element of stack B into the correct

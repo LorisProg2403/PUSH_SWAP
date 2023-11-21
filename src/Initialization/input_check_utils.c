@@ -6,20 +6,11 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 08:21:53 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 14:44:30 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:09:00 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
-
-/* is_sign:
-*   Checks if the character is number sign, + or -.
-*   Return: 1 if the character is a sign, 0 if not.
-*/
-int	is_sign(char c)
-{
-	return (c == '+' || c =='-');
-}
 
 /* nbstr_cmp:
 *   Compares two strings of digits to check if they are the same or not.
