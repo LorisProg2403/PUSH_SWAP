@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:01:20 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 07:05:04 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:26:43 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	exit_error(t_stack **a, t_stack **b)
 		free_stack(a);
 	if (b == NULL || *b)
 		free_stack(b);
-	ft_putstr_fd("Error\n", 2);
+	ft_printf("%e", "Error\n");
 	exit(1);
 }
 

@@ -6,14 +6,14 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 08:24:40 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 15:09:29 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 15:19:47 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 
 cc 		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -I $(INC)
+FLAGS	=	-Wall -Werror -Wextra -I
 RM		=	rm -f
 
 
@@ -56,14 +56,14 @@ OBJS 			= 	$(patsubst $(SRC_PATH)%.c,$(OBJ_PATH)%.o,$(SRCS))
 all :				$(NAME)
 
 $(NAME): 			$(OBJS) $(LIBFT)
-					@$(CC) $(FLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+					@$(CC) $(FLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 					@make -C ./libft
 
 $(OBJ_PATH)%.o:		$(SRC_PATH)%.c 
 					@mkdir -p $(@D)
-					@$(CC) $(CFLAGS) -c $< -o $@
+					@$(CC) $(FLAGS) $(INC) -c $< -o $@
 
 clean:
 					@$(RM) -r $(OBJ_PATH)
