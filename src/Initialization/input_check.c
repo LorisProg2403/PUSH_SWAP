@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:05:18 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 15:04:25 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/22 06:44:39 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@
 *   Checks if the argument is a number. +1 1 and -1 are all valid numbers.
 *   Return: 1 if the argument is a number, 0 if not.
 */
-static int	arg_is_number(char *av)
+static bool	arg_is_number(char *av)
 {
 	int	i;
-	
+
 	i = 0;
 	if (is_sign(av[i]) && av[i + 1])
 		i++;
 	while (av[i] && ft_isdigit(av[i]))
 		i++;
 	if (av[i] && !ft_isdigit(av[i]))
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }
 
 /* have_duplicates:
 *   Checks if the argument list has duplicate numbers.
 *   Return: 1 if a duplicate is found, 0 if there are none.
 */
-static int	have_duplicates(char **av)
+static bool	have_duplicates(char **av)
 {
 	int	i;
 	int	j;
@@ -46,12 +46,12 @@ static int	have_duplicates(char **av)
 		while (av[j])
 		{
 			if (j != i && nbstr_cmp(av[i], av[j]) == 0)
-				return (1);
+				return (true);
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (false);
 }
 
 /* arg_is_zero:
@@ -60,41 +60,41 @@ static int	have_duplicates(char **av)
 *   Return: 1 if the argument is a zero, 0 if it contains
 *	anything else than a zero.
 */
-static int	arg_is_zero(char *av)
+static bool	arg_is_zero(char *av)
 {
 	int	i;
-	
+
 	i = 0;
 	if (is_sign(av[i]))
 		i++;
 	while (av[i] && av[i] == '0')
 		i++;
 	if (av[i])
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }
 
 /* is_correct_input:
 *   Checks if the given arguments are all numbers, without duplicates.
 *   Return: 1 if the arguments are valid, 0 if not.
 */
-int	is_correct_input(char **av)
+bool	is_correct_input(char **av)
 {
 	int	i;
 	int	zeros;
-	
+
 	zeros = 0;
 	i = 1;
 	while (av[i])
 	{
 		if (!arg_is_number(av[i]))
-			return (0);
+			return (false);
 		zeros += arg_is_zero(av[i]);
 		i++;
 	}
 	if (zeros > 1)
-		return (0);
+		return (false);
 	if (have_duplicates(av))
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }

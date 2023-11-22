@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:38:44 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 17:46:06 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/22 06:45:44 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void		exit_error(t_stack **a, t_stack **b);
 
 /* Input Check */
 
-int			is_correct_input(char **av);
+bool		is_correct_input(char **av);
 int			nbstr_cmp(const char *s1, const char *s2);
 
 #endif //PUSH_SWAP_H

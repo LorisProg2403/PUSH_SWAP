@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:47:03 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 06:45:47 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/22 06:43:13 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	assign_index(t_stack *a, int size)
 			else
 				ptr = ptr->next;
 		}
-		if (highest != NULL)
+		if (highest)
 			highest->index = size;
 	}
 }

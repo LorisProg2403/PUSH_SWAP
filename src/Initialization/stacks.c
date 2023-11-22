@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:59:23 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/20 15:05:11 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/22 06:47:22 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 /* get_stack_bottom:
 *	Returns the last element of the stack.
 */
-t_stack	*get_stack_bottom(t_stack *stack)
+t_stack	*get_stack_bottom(t_stack *s)
 {
-	while (stack && stack->next != NULL)
-		stack = stack->next;
-	return (stack);
+	while (s && s->next)
+		s = s->next;
+	return (s);
 }
 
 /* get_stack_before_bottom:
 *	Returns the second to last element of the stack.
 */
-t_stack	*get_stack_before_bottom(t_stack *stack)
+t_stack	*get_stack_before_bottom(t_stack *s)
 {
-	while (stack && stack->next && stack->next->next != NULL)
-		stack = stack->next;
-	return (stack);
+	while (s && s->next && s->next->next)
+		s = s->next;
+	return (s);
 }
 
 /* stack_new:
@@ -56,34 +56,34 @@ t_stack	*stack_new(int value)
 /* add_stack_bottom:
 *	Adds an element to the bottom of a stack.
 */
-void	stack_add_bottom(t_stack **stack, t_stack *new)
+void	stack_add_bottom(t_stack **s, t_stack *new)
 {
 	t_stack	*tail;
 
 	if (!new)
 		return ;
-	if (!*stack)
+	if (!*s)
 	{
-		*stack = new;
+		*s = new;
 		return ;
 	}
-	tail = get_stack_bottom(*stack);
+	tail = get_stack_bottom(*s);
 	tail->next = new;
 }
 
 /* get_stack_size:
 *	Returns the number of elements in a stack.
 */
-int	get_stack_size(t_stack	*stack)
+int	get_stack_size(t_stack	*s)
 {
 	int	size;
 
 	size = 0;
-	if (!stack)
+	if (!s)
 		return (0);
-	while (stack)
+	while (s)
 	{
-		stack = stack->next;
+		s = s->next;
 		size++;
 	}
 	return (size);
