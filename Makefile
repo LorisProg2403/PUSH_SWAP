@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 08:24:40 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 17:54:29 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/30 11:48:18 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,7 +100,7 @@ fclean: 					clean
 							@$(RM) $(BONUS)
 							@make fclean -C ./libft
 					
-re: 						fclean bonus
+re: 						fclean all bonus
 
 .PHONY: 					all clean fclean re bonus both
 	

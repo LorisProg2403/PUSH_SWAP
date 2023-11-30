@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:28:28 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 17:48:50 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/30 11:48:04 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ static void	loop_commands(char **commands, t_stack **a, t_stack **b)
 {
 	int	i;
 	int	check;
-	
+
 	i = 0;
 	while (commands[i])
 	{
-		check = do_commands(commands[i],a ,b);
+		check = do_commands(commands[i], a, b);
 		if (check)
 		{
-			ft_printf("%e", "Failed to do commands\n");
+			ft_printf("%e%e%e", "Failed to do command : ", commands[i], "\n");
 			return ;
 		}
 		i++;
@@ -74,7 +74,7 @@ static void	get_commands(t_stack **a, t_stack **b)
 {
 	char	**commands;
 	int		i;
-	
+
 	i = 0;
 	commands = malloc(sizeof(char *) * 11000);
 	while (1)
@@ -94,14 +94,11 @@ int	main(int ac, char **av)
 	t_stack	*b;
 	bool	used_split;
 
-	used_split = 0;
+	used_split = (!(ac == 1 || (ac == 2 && !av[1][0])) && ac == 2);
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
 	else if (ac == 2)
-	{
 		av = split(av[1], ' ');
-		used_split = 1;
-	}
 	if (!is_correct_input(av))
 		exit_error(NULL, NULL);
 	b = NULL;
