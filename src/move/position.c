@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:52:09 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/19 08:50:28 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/30 13:14:19 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ static int	get_target(t_stack **a, int b_idx, int tar_idx, int tar_pos)
 }
 
 /* get_target_position:
-*	Assigns a target position in stack A to each element of stack A.
+*	Assigns a target position in stack A to each element of stack B.
 *	The target position is the spot the element in B needs to
 *	get to in order to be sorted correctly. This position will
 *	be used to calculate the cost of moving each element to
