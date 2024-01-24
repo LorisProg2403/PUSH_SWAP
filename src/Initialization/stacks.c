@@ -12,9 +12,6 @@
 
 #include "../../inc/push_swap.h"
 
-/* get_stack_bottom:
-*	Returns the last element of the stack.
-*/
 t_stack	*get_stack_bottom(t_stack *s)
 {
 	while (s && s->next)
@@ -22,9 +19,6 @@ t_stack	*get_stack_bottom(t_stack *s)
 	return (s);
 }
 
-/* get_stack_before_bottom:
-*	Returns the second to last element of the stack.
-*/
 t_stack	*get_stack_before_bottom(t_stack *s)
 {
 	while (s && s->next && s->next->next)
@@ -32,10 +26,6 @@ t_stack	*get_stack_before_bottom(t_stack *s)
 	return (s);
 }
 
-/* stack_new:
-*	Creates a stack elements with the provided value.
-*	Returns the newly created stack element.
-*/
 t_stack	*stack_new(int value)
 {
 	t_stack	*new;
@@ -53,9 +43,6 @@ t_stack	*stack_new(int value)
 	return (new);
 }
 
-/* add_stack_bottom:
-*	Adds an element to the bottom of a stack.
-*/
 void	stack_add_bottom(t_stack **s, t_stack *new)
 {
 	t_stack	*tail;
@@ -71,9 +58,6 @@ void	stack_add_bottom(t_stack **s, t_stack *new)
 	tail->next = new;
 }
 
-/* get_stack_size:
-*	Returns the number of elements in a stack.
-*/
 int	get_stack_size(t_stack	*s)
 {
 	int	size;

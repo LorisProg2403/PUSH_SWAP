@@ -12,9 +12,6 @@
 
 #include "../../inc/push_swap.h"
 
-/* find_highest_index:
-*	Returns the highest index in a stack.
-*/
 static int	find_highest_index(t_stack *s)
 {
 	int	index;

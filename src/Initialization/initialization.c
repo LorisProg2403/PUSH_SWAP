@@ -12,10 +12,6 @@
 
 #include "../../inc/push_swap.h"
 
-/* fill_stack_values:
-*	Fills stack_a with the provided values.
-*	If the values are out of integer range, prints and error and exits the program.
-*/
 t_stack	*fill_stack_values(char **av)
 {
 	t_stack	*a;

@@ -12,9 +12,6 @@
 
 #include "../../inc/push_swap.h"
 
-/* free_stack:
-*	Frees each element in a given stack and sets the stack pointer to NULL.
-*/
 void	free_stack(t_stack **s)
 {
 	t_stack	*tmp;
@@ -31,10 +28,6 @@ void	free_stack(t_stack **s)
 	*s = NULL;
 }
 
-/* exit_error:
-*   Writes "Error\n" to the standard output after freeing stack a and b.
-*	Exits with standard error code 1.
-*/
 void	exit_error(t_stack **a, t_stack **b)
 {
 	if (a == NULL || *a)
@@ -45,9 +38,6 @@ void	exit_error(t_stack **a, t_stack **b)
 	exit(1);
 }
 
-/* ft_atoi:
-*   Converts an alphanumeric string of characters into a long integer.
-*/
 long	ft_atolong(const char *str)
 {
 	long	nb;
@@ -71,11 +61,6 @@ long	ft_atolong(const char *str)
 	return (nb * is_neg);
 }
 
-/* nb_abs:
-*	Returns the absolute value of a given number.
-*	The absolute value of a number is used to measure the distance of that
-*	number from 0, whether it is positive or negative (abs value of -6 is 6).
-*/
 int	nb_abs(int n)
 {
 	if (n < 0)

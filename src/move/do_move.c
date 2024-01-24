@@ -23,13 +23,6 @@ static void	do_rev_rotate_both(t_stack **a, t_stack **b,
 	}
 }
 
-/* do_rotate_both:
-*	Rotates both stack A and B until one of them is in position.
-*	The given cost is positive since both positions are in the top half
-*	of their respective stacks. The cost is decreased as the stacks are
-*	rotated, when one reaches 0, the stack has been rotated as far as possible
-*	and the top position is correct.
-*/
 static void	do_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
@@ -40,11 +33,6 @@ static void	do_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 	}
 }
 
-/* do_rotate:
-*	Rotates stack until it is in position. If the cost is negative,
-*	the stack will be reverse rotated, if it is positive, it will be
-*	rotated.
-*/
 static void	do_rotate(t_stack **s, int *cost, char c)
 {
 	while (*cost)
@@ -68,14 +56,6 @@ static void	do_rotate(t_stack **s, int *cost, char c)
 	}
 }
 
-/* do_move:
-*	Chooses which move to make to get the B stack element to the correct
-*	position in stack A.
-*	If the costs of moving stack A and B into position match (i.e. both negative
-*	of both positive), both will be	rotated or reverse rotated at the same time.
-*	They might also be rotated separately, before finally pushing the top B element
-*	to the top stack A.
-*/
 void	do_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
 {
 	if (cost_a < 0 && cost_b < 0)

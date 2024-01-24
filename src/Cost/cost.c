@@ -44,10 +44,6 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-/* do_cheapest_move:
-*	Finds the element in stack B with the cheapest cost to move to stack A
-*	and moves it to the correct position in stack A.
-*/
 void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;

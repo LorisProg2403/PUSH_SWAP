@@ -40,10 +40,6 @@ static void	get_position(t_stack **s)
 	}
 }
 
-/* get_lowest_index_position:
-*	Gets the current position of the element with the lowest index
-*	within a stack.
-*/
 int	get_lowest_index_position(t_stack **s)
 {
 	t_stack	*tmp;
@@ -124,13 +120,6 @@ static int	get_target(t_stack **a, int b_idx, int tar_idx, int tar_pos)
 	return (tar_pos);
 }
 
-/* get_target_position:
-*	Assigns a target position in stack A to each element of stack B.
-*	The target position is the spot the element in B needs to
-*	get to in order to be sorted correctly. This position will
-*	be used to calculate the cost of moving each element to
-*	its target position in stack A.
-*/
 void	get_target_position(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp_b;

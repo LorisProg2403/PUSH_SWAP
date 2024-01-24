@@ -12,10 +12,6 @@
 
 #include "../../inc/push_swap.h"
 
-/* arg_is_number:
-*   Checks if the argument is a number. +1 1 and -1 are all valid numbers.
-*   Return: 1 if the argument is a number, 0 if not.
-*/
 static bool	arg_is_number(char *av)
 {
 	int	i;
@@ -30,10 +26,6 @@ static bool	arg_is_number(char *av)
 	return (true);
 }
 
-/* have_duplicates:
-*   Checks if the argument list has duplicate numbers.
-*   Return: 1 if a duplicate is found, 0 if there are none.
-*/
 static bool	have_duplicates(char **av)
 {
 	int	i;
@@ -54,12 +46,6 @@ static bool	have_duplicates(char **av)
 	return (false);
 }
 
-/* arg_is_zero:
-*   Checks the argument is a 0 to avoid 0 +0 -0 duplicates
-*	and 0 0000 +000 -00000000 too.
-*   Return: 1 if the argument is a zero, 0 if it contains
-*	anything else than a zero.
-*/
 static bool	arg_is_zero(char *av)
 {
 	int	i;
@@ -74,10 +60,6 @@ static bool	arg_is_zero(char *av)
 	return (true);
 }
 
-/* is_correct_input:
-*   Checks if the given arguments are all numbers, without duplicates.
-*   Return: 1 if the arguments are valid, 0 if not.
-*/
 bool	is_correct_input(char **av)
 {
 	int	i;
